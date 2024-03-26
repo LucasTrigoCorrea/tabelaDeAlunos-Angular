@@ -1,0 +1,48 @@
+<div class="container">
+
+  <form>
+    <h1>Cadastro de Aluno</h1>
+    <label for="nome">
+      Nome:
+    </label>
+    <input type="text" [(ngModel)]="nome" name="nome" placeholder="Nome do aluno..."
+    formGroupName="nome"
+    />
+
+    <label for="nota1">
+      Nota 1:
+    </label>
+    <input type="number" [(ngModel)]="nota1" name="nota1" />
+
+    <label for="nota2">
+      Nota 2:
+    </label>
+    <input type="number" [(ngModel)]="nota2" name="nota2" />
+
+    <button type="submit" (click)="adicionarAluno()">Adicionar Aluno</button>
+    <button type="submit" (click)="limparTabela()">Limpar Tabela</button>
+  </form>
+
+  
+
+  <section class="table">
+    <h3>Tabela dos Alunos</h3>
+      <div class="table__title">
+          <h4>Aluno</h4>
+          <h4>Nota 1</h4>
+          <h4>Nota 2</h4>
+          <h4>Media</h4>
+          <h4>Situação do Aluno</h4>
+
+      </div>
+      <div class="table__body" *ngFor="let aluno of alunos">
+        <p>{{ aluno.nome }}</p>
+        <p>{{ aluno.nota1 }}</p>
+        <p>{{ aluno.nota2 }}</p>
+        <p>{{ aluno.media }}</p>
+        <p>{{ aluno.situacao }}</p>
+   
+    </div>
+  </section>
+
+</div>
